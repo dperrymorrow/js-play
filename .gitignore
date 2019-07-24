@@ -61,3 +61,4 @@ typings/
 .next
 solution.js
 .DS_Store
+package-lock.json
