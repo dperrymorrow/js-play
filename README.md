@@ -1,5 +1,6 @@
 # js-play
-a little javascript task for working with Arrays and Objects
+a little javascript task for working with Arrays and Objects.
+Make all the tests pass by filling out the `index.js` file's methods.
 
 - [ ] fork this repository
 - [ ] clone your fork
@@ -11,4 +12,4 @@ npm i
 npm run test
 ```
 
-Make all the tests pass by filling out the `index.js` file's methods.
+
