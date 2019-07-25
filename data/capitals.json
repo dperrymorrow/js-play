@@ -401,7 +401,7 @@
   },
   {
     "name": "Antarctica",
-    "city": ""
+    "city": null
   },
   {
     "name": "Jordan",
@@ -558,5 +558,9 @@
   {
     "name": "Finland",
     "city": "Helsinki [Helsingfors]"
+  },
+  {
+    "name": null,
+    "city": "Foobar"
   }
 ]
