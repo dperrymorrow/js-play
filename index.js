@@ -17,27 +17,55 @@ const merged = abbreviations.map(abb => {
   output.currency_name = curVal[0].currency_name;
   return output;
 });
-//"can merge all JSON files"
-console.log(merged.find(v => v.abbreviation === "AF"));
-console.log(merged[0].city);
 
 // sort
 function mergedSort(key = "name", order = "asc", arr = merged) {
   return arr.sort((a, b) => {
     if (!a[key]) return +1;
     let comparison = a[key].localeCompare(b[key]);
-    console.log(true);
     return order === "desc" ? comparison * -1 : comparison;
   });
 }
 
-// console.log(merged.sort(mergedSort("city", "desc")));
-// console.log("merged:", merged);
+// findWhere
+function findWhere(obj) {
+  console.log(typeof(obj) !== 'object')
+  if(typeof(obj) !== 'object') {
+    console.log("fail");
+    return [];
+  }
+  const keys = Object.keys(obj);
+  const returnVal = merged.filter(el => {
+    switch (keys.length) {
+      case 1:
+        return el[keys[0]] === obj[keys[0]];
+      case 2:
+        return el[keys[0]] === obj[keys[0]] && el[keys[1]] === obj[keys[1]];
+      case 3:
+        return (
+          el[keys[0]] === obj[keys[0]] &&
+          el[keys[1]] === obj[keys[1]] &&
+          el[keys[2]] === obj[keys[2]]
+        );
+      case 4:
+        return (
+          el[keys[0]] === obj[keys[0]] &&
+          el[keys[1]] === obj[keys[1]] &&
+          el[keys[2]] === obj[keys[2]] &&
+          el[keys[3]] === obj[keys[3]]
+        );
+      default:
+        return [];
+    }
+  });
+  return returnVal;
+}
 
+findWhere("foo");
 module.exports = {
   merged,
 
-  findWhere() {},
+  findWhere,
   mergedSort,
   updateWhere() {},
 
