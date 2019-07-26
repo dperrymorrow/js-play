@@ -2,6 +2,7 @@ const abbreviations = require("./data/abbreviations.json");
 const capitals = require("./data/capitals.json");
 const currencies = require("./data/currencies.json");
 
+// merge
 const merged = abbreviations.map(abb => {
   const capVal = capitals.filter(cap => {
     return cap.name === abb.name;
@@ -16,17 +17,25 @@ const merged = abbreviations.map(abb => {
   output.currency_name = curVal[0].currency_name;
   return output;
 });
-//"can merge all JSOn files"
+//"can merge all JSON files"
 console.log(merged.find(v => v.abbreviation === "AF"));
 console.log(merged[0].city);
 
-console.log("merged:", merged);
+function mergedSort(arr = merged, key = 'name', order = 'asc'){
+  return arr.sort((a,b) => {
+    if(!a[key]) return +1;
+    let comparison = a[key].localeCompare(b[key]);
+    return order === 'desc' ? comparison * -1 : comparison;
+  })
+}
+
+console.log("merged:", merged.length);
 
 module.exports = {
   merged: [],
 
   findWhere() {},
-  preMergeSort() {},
+  mergedSort() {},
   updateWhere() {},
 
   abbreviations,
