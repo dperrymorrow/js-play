@@ -9,7 +9,7 @@ npm i
 npm run test
 ```
 
-Once you have finished your solution please send along your `index.js` file for review
+Once you have finished your solution please send email over your `index.js` file to dperrymorrow@gmail.com for review
 thanks!
 
 
