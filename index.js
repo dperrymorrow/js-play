@@ -3,7 +3,7 @@ const capitals = require("./data/capitals.json");
 const currencies = require("./data/currencies.json");
 
 // merge
-const merged = abbreviations.map(abb => {
+let merged = abbreviations.map(abb => {
   const capVal = capitals.filter(cap => {
     return cap.name === abb.name;
   });
@@ -29,9 +29,7 @@ function mergedSort(key = "name", order = "asc", arr = merged) {
 
 // findWhere
 function findWhere(obj) {
-  console.log(typeof(obj) !== 'object')
   if(typeof(obj) !== 'object') {
-    console.log("fail");
     return [];
   }
   const keys = Object.keys(obj);
@@ -60,14 +58,34 @@ function findWhere(obj) {
   });
   return returnVal;
 }
+//outputs true
+// console.log(findWhere("foo"));
 
-findWhere("foo");
+//updateWhere
+function updateWhere(currentVal, newVal) {
+  const newKey = Object.keys(newVal);
+  const valuesToUpdate = findWhere(currentVal);
+  // console.log("pre:", valuesToUpdate)
+  valuesToUpdate.forEach(el => {
+    el[newKey] = newVal[newKey];
+  });
+  // console.log("post:", valuesToUpdate);
+  Object.assign(merged, valuesToUpdate);
+  return valuesToUpdate;
+  // console.log(TestMerge);
+}
+
+console.log(updateWhere({ city: ""}, {city: "N'A" }));
+console.log(findWhere({city: "N/A"}));
+console.log(updateWhere({city: null}, {city: "N'A" }));
+// console.log(findWhere({city: "N/A"}).length);
+
 module.exports = {
   merged,
 
   findWhere,
   mergedSort,
-  updateWhere() {},
+  updateWhere,
 
   abbreviations,
   capitals,
