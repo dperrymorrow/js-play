@@ -27,7 +27,7 @@ test("merge does not include items without a name", t => {
 
 // sorting
 test("can sort defaulting to name", t => {
-  const sorted = subject.preMergeSort();
+  const sorted = subject.mergedSort();
   // t.log(sorted[0]);
   t.is(sorted[0].name, "Afghanistan");
   t.is(sorted[45].name, "Cocos (Keeling) Islands");
@@ -35,7 +35,7 @@ test("can sort defaulting to name", t => {
 });
 
 test("sort can sort on fields and directional", t => {
-  const sorted = subject.preMergeSort("city", "desc");
+  const sorted = subject.mergedSort("city", "desc");
   // t.log(sorted[0]);
   t.is(sorted[0].city, "Zagreb");
   t.is(sorted[35].city, "Riga");

@@ -21,21 +21,24 @@ const merged = abbreviations.map(abb => {
 console.log(merged.find(v => v.abbreviation === "AF"));
 console.log(merged[0].city);
 
-function mergedSort(arr = merged, key = 'name', order = 'asc'){
-  return arr.sort((a,b) => {
-    if(!a[key]) return +1;
+// sort
+function mergedSort(key = "name", order = "asc", arr = merged) {
+  return arr.sort((a, b) => {
+    if (!a[key]) return +1;
     let comparison = a[key].localeCompare(b[key]);
-    return order === 'desc' ? comparison * -1 : comparison;
-  })
+    console.log(true);
+    return order === "desc" ? comparison * -1 : comparison;
+  });
 }
 
-console.log("merged:", merged.length);
+// console.log(merged.sort(mergedSort("city", "desc")));
+// console.log("merged:", merged);
 
 module.exports = {
-  merged: [],
+  merged,
 
   findWhere() {},
-  mergedSort() {},
+  mergedSort,
   updateWhere() {},
 
   abbreviations,
