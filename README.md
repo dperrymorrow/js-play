@@ -1,15 +1,15 @@
 # js-play
 a little javascript task for working with Arrays and Objects.
-Make all the tests pass by filling out the `index.js` file's methods.
-
-- [ ] fork this repository
-- [ ] clone your fork
-- [ ] pull request your solution to this repository
+Make the tests pass by filling out the `index.js` file's methods.
 
 ```
+git clone https://github.com/dperrymorrow/js-play.git
 cd js-play
 npm i
 npm run test
 ```
+
+Once you have finished your solution please send along your `index.js` file for review
+thanks!
 
 
