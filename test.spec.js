@@ -86,7 +86,7 @@ test("can update by values", t => {
   t.is(subject.findWhere({ city: "N/A" }).length, 5);
 
   subject.updateWhere(
-    { name: "Latvia", city: "Riga" },
+    { currency_name: "Euro", city: "Dublin" },
     { currency_name: "foo" }
   );
   t.is(subject.findWhere({ currency_name: "foo" }).length, 1);
