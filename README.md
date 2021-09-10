@@ -9,7 +9,7 @@ npm i
 npm run test
 ```
 
-Once you have finished your solution please send email over your `index.js` file to dperrymorrow@gmail.com for review
+Once you have finished your solution please send over the contents of [`index.js`](https://github.com/dperrymorrow/js-play/blob/master/index.js) via a [gist](https://gist.github.com/) to david.morrow@welocalize.com for review
 thanks!
 
 
